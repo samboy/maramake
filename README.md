@@ -3,7 +3,9 @@
 This is a fork of https://github.com/rmyorston/pdpmake with
 a one line change where, even in strict POSIX mode, we allow
 targets to have the `/` character.  This is a non-POSIX extension
-that the POSIX make spec allows.
+that the POSIX make spec allows.  In addition, [the GPL testsuite
+had been removed](https://github.com/rmyorston/pdpmake/issues/20); this
+code is 100% public domain.
 
 ### Public domain POSIX make
 
@@ -13,6 +15,9 @@ It comes with its own makefile, naturally, and should build on most
 modernish Unix-style systems.  (Command line options may not work
 properly due to differences in how `getopt(3)` is reset.  Adjust
 `GETOPT_RESET()` in make.h for your platform, if necessary.)
+
+Should one not have make, the script `compile.sh` will compile the 
+program with the name `maramake`.  
 
 The default configuration enables extensions:  some from a future POSIX
 standard and some that are non-POSIX.  Generally these extensions are
