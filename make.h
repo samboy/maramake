@@ -245,7 +245,7 @@ extern char *numjobs;
 #endif
 
 // Return TRUE if c is allowed in a POSIX 2017 macro or target name
-#define ispname(c) (isalpha(c) || isdigit(c) || c == '.' || c == '_')
+#define ispname(c) (isalpha(c) || isdigit(c) ||c=='.'||c=='_'||c=='/')
 // Return TRUE if c is in the POSIX 'portable filename character set'
 #define isfname(c) (ispname(c) || c == '-')
 
