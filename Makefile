@@ -6,8 +6,8 @@ BINDIR = $(PREFIX)/bin
 
 OBJS = check.o input.o macro.o main.o make.o modtime.o rules.o target.o utils.o
 
-make: $(OBJS)
-	$(CC) -o make $(OBJS)
+maramake: $(OBJS)
+	$(CC) -o maramake $(OBJS)
 
 $(OBJS): make.h
 
@@ -18,8 +18,5 @@ install: make
 uninstall:
 	rm -f $(DESTDIR)$(BINDIR)/pdpmake
 
-test: make
-	@cd testsuite && ./runtest
-
 clean:
-	rm -f $(OBJS) make
+	rm -f $(OBJS) make maramake
