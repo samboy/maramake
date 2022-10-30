@@ -1,3 +1,10 @@
+# About this fork
+
+This is a fork of https://github.com/rmyorston/pdpmake with
+a one line change where, even in strict POSIX mode, we allow
+targets to have the `/` character.  This is a non-POSIX extension
+that the POSIX make spec allows.
+
 ### Public domain POSIX make
 
 This is an implementation of [POSIX make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html).
