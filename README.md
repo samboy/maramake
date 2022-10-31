@@ -16,7 +16,8 @@ MaraDNS; note that GNU make works perfectly fine too.
 
 The repo is available at 
 [GitHub](https://github.com/samboy/maramake) and
-[Codeberg](https://github.com/samboy/maramake).
+[Codeberg](https://codeberg.org/samboy/maramake), and has a 
+[web page](https://maradns.samiam.org/maramake).
 
 ### Public domain POSIX make
 
