@@ -46,7 +46,7 @@ extern char **environ;
 // are enabled.
 //
 #ifndef ENABLE_FEATURE_MAKE_EXTENSIONS
-# define ENABLE_FEATURE_MAKE_EXTENSIONS 1
+# define ENABLE_FEATURE_MAKE_EXTENSIONS 0
 #endif
 
 #if ENABLE_FEATURE_MAKE_EXTENSIONS
