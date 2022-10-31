@@ -7,6 +7,13 @@ that the POSIX make spec allows.  In addition, [the GPL testsuite
 had been removed](https://github.com/rmyorston/pdpmake/issues/20); this
 code is 100% public domain.
 
+In addition, `maramake` has support for `maramake --version` (or
+`make --version` if renamed `make`); this allows one to know which
+version of maramake one is using.
+
+This is the official implementation of `make` to use to compile
+MaraDNS; note that GNU make works perfectly fine too.
+
 ### Public domain POSIX make
 
 This is an implementation of [POSIX make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html).
