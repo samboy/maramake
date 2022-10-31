@@ -30,6 +30,8 @@ The repo is available at
 [Codeberg](https://codeberg.org/samboy/maramake), and has a 
 [web page](https://maradns.samiam.org/maramake).
 
+The original README follows:
+
 ### Public domain POSIX make
 
 This is an implementation of [POSIX make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html).
@@ -42,9 +44,9 @@ properly due to differences in how `getopt(3)` is reset.  Adjust
 Should one not have make, the script `compile.sh` will compile the 
 program with the name `maramake`.  
 
-The default configuration enables extensions:  some from a future POSIX
-standard and some that are non-POSIX.  Generally these extensions are
-compatible with GNU make:
+It is possible to enable extensions (they are disabled by default):  some
+from a future POSIX standard and some that are non-POSIX.  Generally these
+extensions are compatible with GNU make:
 
  - double-colon rules
  - `-include` to ignore missing include files
@@ -62,7 +64,7 @@ compatible with GNU make:
  - `.PHONY` special target
  - `-C directory` and `-j maxjobs` command line options
 
-When extensions are enabled adding the `.POSIX` target to your makefile
+If extensions are enabled adding the `.POSIX` target to your makefile
 will disable them.  Other versions of make tend to allow extensions even
 in POSIX mode.
 
