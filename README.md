@@ -30,7 +30,7 @@ The repo is available at
 [Codeberg](https://codeberg.org/samboy/maramake), and has a 
 [web page](https://maradns.samiam.org/maramake).
 
-The original README follows:
+The original README (adapted for maramake) follows:
 
 ### Public domain POSIX make
 
