@@ -14,6 +14,10 @@ version of maramake one is using.
 This is the official implementation of `make` to use to compile
 MaraDNS; note that GNU make works perfectly fine too.
 
+The repo is available at 
+[GitHub](https://github.com/samboy/maramake) and
+[Codeberg](https://github.com/samboy/maramake).
+
 ### Public domain POSIX make
 
 This is an implementation of [POSIX make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html).
