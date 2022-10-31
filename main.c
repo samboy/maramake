@@ -33,7 +33,7 @@ static void
 usage(void)
 {
 	fprintf(stderr,
-		"Usage: %s"
+		"Usage: %s --version "
 		IF_FEATURE_MAKE_EXTENSIONS(" [--posix] [-C path]")
 		" [-f makefile]"
 		IF_FEATURE_MAKE_POSIX_202X(" [-j num]")
@@ -378,6 +378,11 @@ main(int argc, char **argv)
 	}
 
 	myname = basename(*argv);
+	// Support --version
+	if (argv[1] && strcmp(argv[1], "--version") == 0) {
+		printf("maramake version 2022-10-30\n");
+		exit(0);
+	}
 #if ENABLE_FEATURE_MAKE_EXTENSIONS
 	if (argv[1] && strcmp(argv[1], "--posix") == 0) {
 		argv[1] = argv[0];
