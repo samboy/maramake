@@ -12,7 +12,7 @@ if renamed `make`); this allows one to know which version of maramake
 one is using.
 
 `ENABLE_FEATURE_MAKE_EXTENSIONS` has been set to 0 in `make.h` so
-that this is a fully POSIX implementation of make.
+that this is a mostly POSIX implementation of make.
 
 If one does not have make, it is possible to compile this with 
 the included `compile.sh` script.
