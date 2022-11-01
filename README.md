@@ -17,7 +17,7 @@ that this is a mostly POSIX implementation of make.
 If one does not have make, it is possible to compile this with 
 the included `compile.sh` script.
 
-`maramake` has uses `cc` as the default value of `CC` instead of the
+`maramake` uses `cc` as the default value of `CC` instead of the
 POSIX-specified `c99` value; as it turns out MaraDNS won’t compile with
 `c99` because POSIX and socket system calls which MaraDNS needs are not
 present in the ISO C standard.
