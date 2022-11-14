@@ -380,7 +380,7 @@ main(int argc, char **argv)
 	myname = basename(*argv);
 	// Support --version
 	if (argv[1] && strcmp(argv[1], "--version") == 0) {
-		printf("maramake version 2022-11-0#\n");
+		printf("maramake version 2022-11-##\n");
 		exit(0);
 	}
 #if ENABLE_FEATURE_MAKE_EXTENSIONS

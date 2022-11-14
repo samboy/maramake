@@ -64,14 +64,21 @@ extern char **environ;
 // are both explicitly set non-zero the POSIX mode enforced by .POSIX,
 // PDPMAKE_POSIXLY_CORRECT or --posix is POSIX 202X.  In all other cases
 // the mode enforced by runtime settings is POSIX 2017.
-//
-#define POSIX_2017 posix
-#ifndef ENABLE_FEATURE_MAKE_POSIX_202X
-# define ENABLE_FEATURE_MAKE_POSIX_202X ENABLE_FEATURE_MAKE_EXTENSIONS
-#elif ENABLE_FEATURE_MAKE_POSIX_202X && ENABLE_FEATURE_MAKE_EXTENSIONS
+
+// For maramake, we do not want ENABLE_FEATURE_MAKE_EXTENSIONS but we
+// do want ENABLE_FEATURE_MAKE_POSIX_202X for '/' and '-' in target 
+// names
+//#define POSIX_2017 posix
+//#ifndef ENABLE_FEATURE_MAKE_POSIX_202X
+//# define ENABLE_FEATURE_MAKE_POSIX_202X ENABLE_FEATURE_MAKE_EXTENSIONS
+//#elif ENABLE_FEATURE_MAKE_POSIX_202X && ENABLE_FEATURE_MAKE_EXTENSIONS
+//# undef POSIX_2017
+//# define POSIX_2017 0
+//#endif
+
 # undef POSIX_2017
 # define POSIX_2017 0
-#endif
+# define ENABLE_FEATURE_MAKE_POSIX_202X 1
 
 #if ENABLE_FEATURE_MAKE_POSIX_202X
 # define IF_FEATURE_MAKE_POSIX_202X(...) __VA_ARGS__
@@ -179,7 +186,7 @@ struct name {
 #define N_SILENT	0x20	// Build target silently
 #define N_IGNORE	0x40	// Ignore build errors
 #define N_SPECIAL	0x80	// Special target
-#if ENABLE_FEATURE_MAKE_EXTENSIONS
+#if ENABLE_FEATURE_MAKE_EXTENSIONS || ENABLE_FEATURE_MAKE_POSIX_202X
 #define N_MARK		0x100	// Mark for deduplication
 #endif
 #if ENABLE_FEATURE_MAKE_POSIX_202X
@@ -245,7 +252,7 @@ extern char *numjobs;
 #endif
 
 // Return TRUE if c is allowed in a POSIX 2017 macro or target name
-#define ispname(c) (isalpha(c) || isdigit(c) ||c=='.'||c=='_'||c=='/')
+#define ispname(c) (isalpha(c) || isdigit(c) || c == '.' || c == '_')
 // Return TRUE if c is in the POSIX 'portable filename character set'
 #define isfname(c) (ispname(c) || c == '-')
 

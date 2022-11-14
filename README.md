@@ -1,11 +1,6 @@
 # About this fork
 
-This is a fork of https://github.com/rmyorston/pdpmake with
-a one line change where, even in strict POSIX mode, we allow
-targets to have the `/` character.  This is a non-POSIX extension
-that the POSIX make spec allows.  In addition, [the GPL testsuite
-had been removed](https://github.com/rmyorston/pdpmake/issues/20); this
-code is 100% public domain.
+This is a fork of https://github.com/rmyorston/pdpmake 
 
 `maramake` has support for `maramake --version` (or `make --version` 
 if renamed `make`); this allows one to know which version of maramake 
@@ -13,6 +8,11 @@ one is using.
 
 `ENABLE_FEATURE_MAKE_EXTENSIONS` has been set to 0 in `make.h` so
 that this is a mostly POSIX implementation of make.
+
+`ENABLE_FEATURE_MAKE_POSIX_202X` has been set to 1 in `make.h` so
+that maramake can have the characters `/` and `-` in makefile
+targets.  See https://github.com/rmyorston/pdpmake/issues/17 for
+discussion.
 
 If one does not have make, it is possible to compile this with 
 the included `compile.sh` script.
