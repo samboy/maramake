@@ -4,19 +4,20 @@
 PREFIX = /usr/local
 BINDIR = $(PREFIX)/bin
 
+BIN = maramake
 OBJS = check.o input.o macro.o main.o make.o modtime.o rules.o target.o utils.o
 
-maramake: $(OBJS)
-	$(CC) -o maramake $(OBJS)
+$(BIN): $(OBJS)
+	$(CC) -o $@ $(OBJS)
 
 $(OBJS): make.h
 
-install: make
+install: $(BIN)
 	mkdir -p $(DESTDIR)$(BINDIR)
-	cp -f make $(DESTDIR)$(BINDIR)/pdpmake
+	cp -f $(BIN) $(DESTDIR)$(BINDIR)/
 
 uninstall:
-	rm -f $(DESTDIR)$(BINDIR)/pdpmake
+	rm -f $(DESTDIR)$(BINDIR)/$(BIN)
 
 clean:
-	rm -f $(OBJS) make maramake
+	rm -f $(BIN) $(OBJS)
